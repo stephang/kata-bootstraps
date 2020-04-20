@@ -15,11 +15,17 @@ class KataTest extends TestCase
         $this->assertTrue(true);
     }
 
-    public function testBoard()
+    public function testBoardIllegal()
     {
         $board = new Kata([["X", "X", "X"], ["", "", ""], ["", "", ""]]);
         $result = $board->evaluate();
         $this->assertEquals("Illegal", $result);
     }
 
+    public function testBoardOneWins()
+    {
+        $board = new Kata([["X", "X", "X"], ["Y", "Y", ""], ["", "", ""]]);
+        $result = $board->evaluate();
+        $this->assertEquals("Player 1 wins", $result);
+    }
 }
