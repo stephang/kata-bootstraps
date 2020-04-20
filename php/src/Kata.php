@@ -33,9 +33,7 @@ class Kata
         $counter = 0;
         foreach ($this->grid as $line) {
             foreach ($line as $cell) {
-                if ($cell == $player ) {
-                    $counter++;
-                }
+                $counter += $cell == $player ? 1 : 0;
             }
         }
         return $counter;
